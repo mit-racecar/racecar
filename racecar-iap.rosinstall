@@ -1,0 +1,2 @@
+- setup-file: {local-name: /opt/ros/indigo/setup.sh}
+- git: {local-name: src/racecar-iap,         version: master,        uri: 'git@github.mit.edu:racecar-iap/racecar-iap.git'}
