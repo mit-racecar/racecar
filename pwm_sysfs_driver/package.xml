@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package>
+  <name>pwm_sysfs_driver</name>
+  <version>0.0.1</version>
+  <description>ROS interface to sysfs-based PWM hardware.</description>
+
+  <maintainer email="boulet@ll.mit.edu">Michael Boulet</maintainer>
+  <license>MIT</license>
+
+  <!-- <url type="website">http://wiki.ros.org/pwm_sysfs_driver</url> -->
+
+  <!-- <author email="jane.doe@example.com">Jane Doe</author> -->
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>pluginlib</build_depend>
+  <build_depend>nodelet</build_depend>
+
+  <run_depend>roscpp</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>pluginlib</run_depend>
+  <run_depend>nodelet</run_depend>
+
+  <export>
+    <nodelet plugin="${prefix}/plugins/nodelet.xml"/>
+  </export>
+</package>

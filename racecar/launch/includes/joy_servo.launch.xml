@@ -1,0 +1,22 @@
+<!-- -*- mode: XML -*- -->
+<!--
+ This work is sponsored by the Department of the Air Force under Air Force
+ Contract FA8721-05-C-0002. Opinions, interpretations, conclusions, and
+ recommendations are those of the author and are not necessarily endorsed by
+ the United States Government.
+-->
+
+<launch>
+
+  <node pkg="joy" type="joy_node" name="joy_node">
+    <param name="deadzone" value="0.01" />
+    <param name="autorepeat_rate" value="20" />
+    <param name="coalesce_interval" value="0.01" />
+  </node>
+
+  <include file="$(find joy_to_servo)/launch/joy_to_servo.launch">
+    <arg name="steering_positive_gain" value="-1" />
+    <arg name="steering_negative_gain" value="-1" />
+  </include>
+
+</launch>

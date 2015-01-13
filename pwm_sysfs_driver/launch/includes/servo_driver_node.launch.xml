@@ -1,0 +1,36 @@
+<!-- -*- mode: XML -*- -->
+<!--
+ This work is sponsored by the Department of the Air Force under Air Force
+ Contract FA8721-05-C-0002. Opinions, interpretations, conclusions, and
+ recommendations are those of the author and are not necessarily endorsed by
+ the United States Government.
+-->
+
+<launch>
+  <arg name="manager" default="null" /> <!-- ignored -->
+  <arg name="start_manager" default="null" /> <!-- ignored -->
+
+  <arg name="pwm_sysfs_dir" default="/sys/class/pwm/pwmchip0/pwm0" />
+  <arg name="update_rate" default="100" />
+  <arg name="min_pulse_width" default="1" />
+  <arg name="max_pulse_width" default="2" />
+  <arg name="invert_polarity" default="false" />
+  <arg name="initial_command" default="0" />
+  <arg name="timeout" default="0.5" />
+  <arg name="disable_on_timeout" default="false" />
+  <arg name="timeout_command" default="0" />
+  <arg name="disable_on_exit" default="true" />
+
+  <node pkg="pwm_sysfs_driver" type="servo_driver_node" name="servo_driver_node">
+    <param name="pwm_sysfs_dir" value="$(arg pwm_sysfs_dir)" />
+    <param name="update_rate" value="$(arg update_rate)" />
+    <param name="min_pulse_width" value="$(arg min_pulse_width)" />
+    <param name="max_pulse_width" value="$(arg max_pulse_width)" />
+    <param name="invert_polarity" value="$(arg invert_polarity)" />
+    <param name="initial_command" value="$(arg initial_command)" />
+    <param name="timeout" value="$(arg timeout)" />
+    <param name="disable_on_timeout" value="$(arg disable_on_timeout)" />
+    <param name="timeout_command" value="$(arg timeout_command)" />
+    <param name="disable_on_exit" value="$(arg disable_on_exit)" />
+  </node>
+</launch>

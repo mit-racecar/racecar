@@ -1,0 +1,31 @@
+<!-- -*- mode: XML -*- -->
+<!--
+ This work is sponsored by the Department of the Air Force under Air Force
+ Contract FA8721-05-C-0002. Opinions, interpretations, conclusions, and
+ recommendations are those of the author and are not necessarily endorsed by
+ the United States Government.
+-->
+
+<launch>
+  <!-- launch script arguments -->
+  <arg name="bag"/>
+
+  <include file="$(find racecar)/launch/replay_bag_file.launch">
+    <arg name="bag" value="$(arg bag)" />
+  </include>
+
+  <include file="$(find racecar)/launch/static_transforms.launch" />
+
+  <node pkg="laser_scan_matcher" type="laser_scan_matcher_node" 
+        name="laser_scan_matcher_node" output="screen">
+
+    <param name="use_imu" value="true" />
+    <param name="use_odom" value="false" />
+    <param name="use_vel" value="false" />
+
+  </node>
+
+  <node pkg="rviz" type="rviz" name="rviz" 
+        args="-d $(find racecar)/rviz/laser_scan_matcher.rviz" />
+
+</launch>

@@ -1,0 +1,37 @@
+<!-- -*- mode: XML -*- -->
+<!--
+ This work is sponsored by the Department of the Air Force under Air Force
+ Contract FA8721-05-C-0002. Opinions, interpretations, conclusions, and
+ recommendations are those of the author and are not necessarily endorsed by
+ the United States Government.
+-->
+
+<launch>
+  <arg name="run_camera" default="true" />
+
+  <!-- laser -->
+  <node pkg="urg_node" type="urg_node" name="laser_node">
+    <param name="ip_address" value="192.168.0.10" />
+  </node>
+
+  <!-- imu -->
+  <node pkg="razor_imu_9dof" type="node.py" name="imu_node">
+    <param name="device" type="string" value="/dev/imu" />
+  </node>
+
+  <!-- camera -->
+  <group ns="front_camera">
+    <node pkg="pointgrey_camera_driver" type="camera_node" name="camera_node">
+      <param name="serial" value="0" />
+      <param name="camera_info_url" value="" />
+      <param name="frame_id" value="camera" />
+    </node>
+  </group>
+
+  <!-- optical flow -->
+  <node pkg="px4flow" type="px4flow_node" name="optical_flow_node">
+    <param name="serial_port" value="/dev/px4flow" />
+    <param name="baudrate" value="115200" />
+  </node>
+
+</launch>

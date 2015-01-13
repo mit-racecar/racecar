@@ -1,2 +1,6 @@
 - setup-file: {local-name: /opt/ros/indigo/setup.sh}
 - git: {local-name: src/racecar-iap,         version: master,        uri: 'git@github.mit.edu:racecar-iap/racecar-iap.git'}
+- git: {local-name: src/px-ros-pkg,          version: master,        uri: 'https://github.com/cvg/px-ros-pkg.git'}
+- git: {local-name: src/razor_imu_9dof,      version: indigo-devel,  uri: 'https://github.com/KristofRobot/razor_imu_9dof.git'}
+- git: {local-name: src/scan_tools,          version: racecar-iap,   uri: 'git@github.mit.edu:racecar-iap/scan_tools.git'}
+- git: {local-name: src/pointgrey_camera_driver, version: racecar-iap, uri: 'git@github.mit.edu:racecar-iap/pointgrey_camera_driver.git'}

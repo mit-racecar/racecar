@@ -1,0 +1,23 @@
+<!-- -*- mode: XML -*- -->
+<!--
+ This work is sponsored by the Department of the Air Force under Air Force
+ Contract FA8721-05-C-0002. Opinions, interpretations, conclusions, and
+ recommendations are those of the author and are not necessarily endorsed by
+ the United States Government.
+-->
+
+<launch>
+
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_imu" 
+        args="0.1 0.0 0.16 1.57 0.0 0.0 /base_link /base_imu_link 100" />
+
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_px4flow" 
+        args="0.15 0.0 0.16 -1.57 0.0 0.0 /base_link /px4flow 100" />
+
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" 
+        args="0.265 0.0 0.145 0.0 0.0 0.0 /base_link /laser 100" />
+
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_camera" 
+        args="0.340 0.0 0.120 0.0 0.0 0.0 /base_link /camera 100" />
+
+</launch>

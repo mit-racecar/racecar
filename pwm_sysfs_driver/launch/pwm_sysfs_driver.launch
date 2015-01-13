@@ -1,0 +1,28 @@
+<!-- -*- mode: XML -*- -->
+<!--
+ This work is sponsored by the Department of the Air Force under Air Force
+ Contract FA8721-05-C-0002. Opinions, interpretations, conclusions, and
+ recommendations are those of the author and are not necessarily endorsed by
+ the United States Government.
+-->
+
+<launch>
+  <arg name="type" default="node" /> <!-- node or nodelet -->
+  <arg name="manager" default="pwm_sysfs_driver_nodelet_manager" /> <!-- ignored if type=node -->
+  <arg name="start_manager" default="true" /> <!-- ignored if type=node -->g
+  <arg name="pwm_sysfs_dir" default="/sys/class/pwm/pwmchip0/pwm0" />
+  <arg name="initial_enable" default="true" />
+  <arg name="initial_invert_polarity" default="false" />
+  <arg name="initial_period" default="5000000" />
+  <arg name="initial_duty" default="0" />
+
+  <include file="$(find pwm_sysfs_driver)/launch/includes/pwm_sysfs_driver_$(arg type).launch.xml">
+    <arg name="manager" value="$(arg manager)" />
+    <arg name="start_manager" value="$(arg start_manager)" />
+    <arg name="pwm_sysfs_dir" value="$(arg pwm_sysfs_dir)" />
+    <arg name="initial_enable" value="$(arg initial_enable)" />
+    <arg name="initial_invert_polarity" value="$(arg initial_invert_polarity)" />
+    <arg name="initial_period" value="$(arg initial_period)" />
+    <arg name="initial_duty" value="$(arg initial_duty)" />
+  </include>
+</launch>

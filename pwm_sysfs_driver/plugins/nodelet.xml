@@ -1,0 +1,18 @@
+<library path="lib/libpwm_sysfs_driver_nodelet">
+  <class name="pwm_sysfs_driver/PwmSysfsDriverNodelet"
+         type="pwm_sysfs_driver::PwmSysfsDriverNodelet"
+         base_class_type="nodelet::Nodelet">
+    <description> 
+      Nodelet driver for sysfs-based PWM hardware interface.
+    </description>
+  </class>
+</library>
+<library path="lib/libservo_driver_nodelet">
+  <class name="pwm_sysfs_driver/ServoDriverNodelet"
+         type="pwm_sysfs_driver::ServoDriverNodelet"
+         base_class_type="nodelet::Nodelet">
+    <description> 
+      Nodelet driver for sysfs-based PWM-controlled servo hardware interface.
+    </description>
+  </class>
+</library>
