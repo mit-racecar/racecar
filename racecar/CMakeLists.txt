@@ -4,19 +4,7 @@ project(racecar)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED
-  razor_imu_9dof
-  pointgrey_camera_driver
-  px4flow
-  tf
-  urg_node
-  joy
-  laser_scan_matcher
-  rviz
-  rosbag
-  pwm_sysfs_driver
-  joy_to_servo
-)
+find_package(catkin REQUIRED)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -98,7 +86,6 @@ catkin_package(
     urg_node
     joy
     laser_scan_matcher
-    rviz
     rosbag
     pwm_sysfs_driver
     joy_to_servo

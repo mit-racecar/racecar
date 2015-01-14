@@ -22,7 +22,6 @@
   <run_depend>urg_node</run_depend>
   <run_depend>joy</run_depend>
   <run_depend>laser_scan_matcher</run_depend>
-  <run_depend>rviz</run_depend>
   <run_depend>rosbag</run_depend>
   <run_depend>pwm_sysfs_driver</run_depend>
   <run_depend>joy_to_servo</run_depend>
