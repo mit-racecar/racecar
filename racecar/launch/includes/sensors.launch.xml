@@ -20,7 +20,7 @@
   </node>
 
   <!-- camera -->
-  <group ns="front_camera">
+  <group ns="front_camera" if="$(arg run_camera)">
     <node pkg="pointgrey_camera_driver" type="camera_node" name="camera_node">
       <param name="serial" value="0" />
       <param name="camera_info_url" value="" />
