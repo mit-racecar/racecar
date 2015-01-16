@@ -78,7 +78,17 @@ find_package(catkin REQUIRED)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES racecar_launch
-#  CATKIN_DEPENDS other_catkin_pkg
+  CATKIN_DEPENDS
+    razor_imu_9dof
+    pointgrey_camera_driver
+    px4flow
+    tf
+    urg_node
+    joy
+    laser_scan_matcher
+    rosbag
+    pwm_sysfs_driver
+    joy_to_servo
 #  DEPENDS system_lib
 )
 

@@ -15,7 +15,16 @@
 
   <!--<build_depend></build_depend>-->
 
-  <!--<run_depend>roscpp</run_depend>-->
+  <run_depend>razor_imu_9dof</run_depend>
+  <run_depend>pointgrey_camera_driver</run_depend>
+  <run_depend>px4flow</run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>urg_node</run_depend>
+  <run_depend>joy</run_depend>
+  <run_depend>laser_scan_matcher</run_depend>
+  <run_depend>rosbag</run_depend>
+  <run_depend>pwm_sysfs_driver</run_depend>
+  <run_depend>joy_to_servo</run_depend>
 
   <export>
   </export>
