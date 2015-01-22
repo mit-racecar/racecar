@@ -11,6 +11,7 @@
   <arg name="bag"/>
   <arg name="rate" default="1.0"/>
   <arg name="start" default="0.0"/>
+  <arg name="resolution" default="0.05"/>
 
   <include file="$(find racecar)/launch/replay_bag_file.launch">
     <arg name="bag" value="$(arg bag)" />
@@ -73,6 +74,7 @@
     <param name="maxUrange" value="8"/>
     <param name="maxRange" value="12"/>
     <param name="particles" value="60"/>
+    <param name="delta" value="$(arg resolution)"/>
 <!--
     <param name="srr" value=".05"/>
     <param name="srt" value=".10"/>
