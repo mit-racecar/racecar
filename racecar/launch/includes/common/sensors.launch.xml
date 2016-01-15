@@ -7,15 +7,16 @@
 -->
 
 <launch>
+  <arg name="racecar_version" />
+  <arg name="sensors_config"
+       default="$(find racecar)/config/$(arg racecar_version)/sensors.yaml" />
+
+  <rosparam file="$(arg sensors_config)" command="load" />
 
   <!-- laser -->
-  <node pkg="urg_node" type="urg_node" name="laser_node">
-    <param name="ip_address" value="192.168.0.10" />
-  </node>
+  <node pkg="urg_node" type="urg_node" name="laser_node" />
 
   <!-- imu -->
-  <node pkg="razor_imu_9dof" type="node.py" name="imu_node">
-    <param name="device" type="string" value="/dev/imu" />
-  </node>
+  <node pkg="razor_imu_9dof" type="imu_node.py" name="imu_node" />
 
 </launch>

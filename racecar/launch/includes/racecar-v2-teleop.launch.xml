@@ -18,6 +18,8 @@
       <arg name="racecar_version" value="$(arg racecar_version)" />
     </include>
   </group>
-  <include file="$(find racecar)/launch/includes/common/sensors.launch.xml" />
+  <include file="$(find racecar)/launch/includes/common/sensors.launch.xml" >
+    <arg name="racecar_version" value="$(arg racecar_version)" />
+  </include>
 
 </launch>
