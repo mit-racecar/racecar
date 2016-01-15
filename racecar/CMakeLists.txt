@@ -80,15 +80,24 @@ catkin_package(
 #  LIBRARIES racecar_launch
   CATKIN_DEPENDS
     razor_imu_9dof
-    pointgrey_camera_driver
-    px4flow
     tf
+    tf2_ros
     urg_node
     joy
+    joy_teleop
     laser_scan_matcher
     rosbag
+    rostopic
+    rviz
+    # specific to racecar-v1
+    pointgrey_camera_driver
+    px4flow
     pwm_sysfs_driver
-    joy_to_servo
+    # specific to racecar-v2
+    # mapping
+    gmapping
+    hector_mapping
+    robot_pose_ekf
 #  DEPENDS system_lib
 )
 

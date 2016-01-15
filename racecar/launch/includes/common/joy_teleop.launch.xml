@@ -7,6 +7,9 @@
 -->
 
 <launch>
+  <arg name="racecar_version" />
+  <arg name="teleop_config"
+       default="$(find racecar)/config/$(arg racecar_version)/joy_teleop.yaml" />
 
   <node pkg="joy" type="joy_node" name="joy_node">
     <param name="deadzone" value="0.01" />
@@ -14,9 +17,8 @@
     <param name="coalesce_interval" value="0.01" />
   </node>
 
-  <include file="$(find joy_to_servo)/launch/joy_to_servo.launch">
-    <arg name="steering_positive_gain" value="-1" />
-    <arg name="steering_negative_gain" value="-1" />
-  </include>
+  <rosparam file="$(arg teleop_config)" command="load" />
+  <node pkg="joy_teleop" type="joy_teleop.py" name="joy_teleop">
+  </node>
 
 </launch>

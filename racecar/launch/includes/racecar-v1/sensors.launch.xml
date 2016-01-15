@@ -9,16 +9,6 @@
 <launch>
   <arg name="run_camera" default="true" />
 
-  <!-- laser -->
-  <node pkg="urg_node" type="urg_node" name="laser_node">
-    <param name="ip_address" value="192.168.0.10" />
-  </node>
-
-  <!-- imu -->
-  <node pkg="razor_imu_9dof" type="node.py" name="imu_node">
-    <param name="device" type="string" value="/dev/imu" />
-  </node>
-
   <!-- camera -->
   <group ns="front_camera" if="$(arg run_camera)">
     <node pkg="pointgrey_camera_driver" type="camera_node" name="camera_node">

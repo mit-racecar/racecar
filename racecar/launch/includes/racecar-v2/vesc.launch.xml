@@ -1,0 +1,19 @@
+<!-- -*- mode: XML -*- -->
+<!--
+ This work is sponsored by the Department of the Air Force under Air Force
+ Contract FA8721-05-C-0002. Opinions, interpretations, conclusions, and
+ recommendations are those of the author and are not necessarily endorsed by
+ the United States Government.
+-->
+
+<launch>
+  <arg name="racecar_version" />
+
+  <arg name="vesc_config" default="$(find racecar)/config/$(arg racecar_version)/vesc.yaml" />
+  <rosparam file="$(arg vesc_config)" command="load" />
+
+  <node pkg="vesc_ackermann" type="ackermann_to_vesc_node" name="ackermann_to_vesc" />
+  <node pkg="vesc_driver" type="vesc_driver_node" name="vesc_driver" />
+  <node pkg="vesc_ackermann" type="vesc_to_odom_node" name="vesc_to_odom" />
+
+</launch>

@@ -1,0 +1,23 @@
+<!-- -*- mode: XML -*- -->
+<!--
+ This work is sponsored by the Department of the Air Force under Air Force
+ Contract FA8721-05-C-0002. Opinions, interpretations, conclusions, and
+ recommendations are those of the author and are not necessarily endorsed by
+ the United States Government.
+-->
+
+<launch>
+  <arg name="racecar_version" default="racecar-v2" />
+  <arg name="run_camera" default="false"/>
+
+  <group ns="vesc">
+    <include file="$(find racecar)/launch/includes/common/joy_teleop.launch.xml" >
+      <arg name="racecar_version" value="$(arg racecar_version)" />
+    </include>
+    <include file="$(find racecar)/launch/includes/$(arg racecar_version)/vesc.launch.xml" >
+      <arg name="racecar_version" value="$(arg racecar_version)" />
+    </include>
+  </group>
+  <include file="$(find racecar)/launch/includes/common/sensors.launch.xml" />
+
+</launch>

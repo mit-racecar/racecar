@@ -7,12 +7,11 @@
 -->
 
 <launch>
-  <arg name="run_camera" default="true"/>
+  <arg name="racecar_version" default="racecar-v2" />
+  <arg name="run_camera" default="false"/>
 
-  <include file="$(find racecar)/launch/includes/joy_servo.launch.xml" />
-  <include file="$(find racecar)/launch/includes/steering.launch.xml" />
-  <include file="$(find racecar)/launch/includes/throttle.launch.xml" />
-  <include file="$(find racecar)/launch/includes/sensors.launch.xml">
+  <include file="$(find racecar)/launch/includes/$(arg racecar_version)-teleop.launch.xml">
+    <arg name="racecar_version" value="$(arg racecar_version)" />
     <arg name="run_camera" value="$(arg run_camera)" />
   </include>
 

@@ -1,0 +1,23 @@
+teleop:
+  throttle:
+    type: topic
+    message_type: std_msgs/Float64
+    topic_name: throttle/command
+    deadman_buttons: [4]
+    axis_mappings:
+      -
+        axis: 1
+        target: data
+        scale: 1.0
+        offset: 0.0
+  steering:
+    type: topic
+    message_type: std_msgs/Float64
+    topic_name: steering/command
+    deadman_buttons: [4]
+    axis_mappings:
+      -
+        axis: 3
+        target: data
+        scale: 1.0
+        offset: 0.0
