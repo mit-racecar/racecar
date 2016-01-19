@@ -11,12 +11,12 @@
   <arg name="bag"/>
   <arg name="rate" default="1.0"/>
 
-  <include file="$(find racecar)/launch/replay_bag_file.launch">
+  <include file="$(find racecar)/launch/replay_bag_file/replay_bag_file.launch">
     <arg name="bag" value="$(arg bag)" />
     <arg name="rate" value="$(arg rate)" />
   </include>
 
-  <include file="$(find racecar)/launch/includes/static_transforms.launch.xml" />
+  <include file="$(find racecar)/launch/includes/racecar-v1/static_transforms.launch.xml" />
 
   <node pkg="laser_scan_matcher" type="laser_scan_matcher_node" 
         name="laser_scan_matcher_node" output="screen">
