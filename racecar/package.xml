@@ -2,7 +2,7 @@
 <package>
   <name>racecar</name>
   <version>0.0.1</version>
-  <description>RACECAR IAP Course launch scripts</description>
+  <description>RACECAR launch scripts</description>
 
   <maintainer email="boulet@ll.mit.edu">Michael Boulet</maintainer>
   <license>MIT</license>
