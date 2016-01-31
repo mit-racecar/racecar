@@ -1,10 +1,10 @@
 
 # erpm (electrical rpm) = 3000 * speed (meters / second) + 0
-speed_to_erpm_gain: 3000
+speed_to_erpm_gain: 4600
 speed_to_erpm_offset: 0.0
 
 # servo value (0 to 1) =  -1.4 * steering angle (radians) + 0.5
-steering_angle_to_servo_gain: -1.4 
+steering_angle_to_servo_gain: -1.38
 steering_angle_to_servo_offset: 0.5
 
 # car wheelbase is about 25cm 
