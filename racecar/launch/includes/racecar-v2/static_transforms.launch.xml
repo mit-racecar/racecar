@@ -1,0 +1,23 @@
+<!-- -*- mode: XML -*- -->
+<!--
+ This work is sponsored by the Department of the Air Force under Air Force
+ Contract FA8721-05-C-0002. Opinions, interpretations, conclusions, and
+ recommendations are those of the author and are not necessarily endorsed by
+ the United States Government.
+-->
+
+<launch>
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_to_imu" 
+        args="0.245 0.0 0.117    0.7071067811865475 0.7071067811865475 0.0 0.0 /base_link /base_imu_link" />
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_to_laser" 
+        args="0.285 0.0 0.127 0.0 0.0 0.0 1.0 /base_link /laser" />
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_to_base_footprint" 
+        args="0.0 0.0 0.0     0.0 0.0 0.0 1.0 /base_link /base_footprint" />
+
+  <!-- todo: zed camera -->
+  <!-- todo: structure sensor -->
+
+</launch>

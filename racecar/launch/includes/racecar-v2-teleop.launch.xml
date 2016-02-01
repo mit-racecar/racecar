@@ -21,5 +21,7 @@
   <include file="$(find racecar)/launch/includes/common/sensors.launch.xml" >
     <arg name="racecar_version" value="$(arg racecar_version)" />
   </include>
+  <include file="$(find racecar)/launch/includes/$(arg racecar_version)/static_transforms.launch.xml" >
+  </include>
 
 </launch>
