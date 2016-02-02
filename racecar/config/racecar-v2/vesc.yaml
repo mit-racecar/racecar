@@ -7,6 +7,9 @@ speed_to_erpm_offset: 0.0
 steering_angle_to_servo_gain: -1.38
 steering_angle_to_servo_offset: 0.5
 
+# publish odom to base link tf
+vesc_to_odom/publish_tf: true
+
 # car wheelbase is about 25cm 
 wheelbase: .25
 
