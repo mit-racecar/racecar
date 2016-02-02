@@ -17,6 +17,10 @@
     <include file="$(find racecar)/launch/includes/$(arg racecar_version)/vesc.launch.xml" >
       <arg name="racecar_version" value="$(arg racecar_version)" />
     </include>
+    <include file="$(find ackermann_cmd_mux)/launch/standalone.launch">
+      <arg name="nodelet_manager_name" value="ackermann_cmd_mux_nodelet_manager" />
+      <arg name="config_file" value="$(find racecar)/config/$(arg racecar_version)/mux.yaml" />
+    </include>
   </group>
   <include file="$(find racecar)/launch/includes/common/sensors.launch.xml" >
     <arg name="racecar_version" value="$(arg racecar_version)" />

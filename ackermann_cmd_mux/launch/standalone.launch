@@ -6,8 +6,8 @@
   it standalone with a similar configuration will also work.
  -->
 <launch>
-  <arg name="nodelet_manager_name"  value="nodelet_manager"/>
-  <arg name="config_file"           value="$(find ackermann_cmd_mux)/param/example.yaml"/>
+  <arg name="nodelet_manager_name"  default="nodelet_manager"/>
+  <arg name="config_file"           default="$(find ackermann_cmd_mux)/param/example.yaml"/>
   
   <!-- nodelet manager -->
   <node pkg="nodelet" type="nodelet" name="$(arg nodelet_manager_name)" args="manager"/>
