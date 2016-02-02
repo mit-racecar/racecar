@@ -1,5 +1,5 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Changelog for package yocs_cmd_vel_mux
+Changelog for package ackermann_cmd_mux
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 0.6.3 (2014-12-05)
@@ -7,7 +7,7 @@ Changelog for package yocs_cmd_vel_mux
 
 0.6.2 (2014-11-30)
 ------------------
-* yocs_cmd_vel_mux: fixes node handle for output pub
+* ackermann_cmd_mux: fixes node handle for output pub
   to keep backwards compatibility
 * adds a little launcher restructing for muxer and smoother
 * Contributors: Marcus Liebhardt
@@ -37,7 +37,7 @@ Changelog for package yocs_cmd_vel_mux
 
 0.5.0 (2013-10-11)
 ------------------
-* Renamed as yocs_cmd_vel_mux.
+* Renamed as ackermann_cmd_mux.
 
 0.4.1 (2013-10-08)
 ------------------

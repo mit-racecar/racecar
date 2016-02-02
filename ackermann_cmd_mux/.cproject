@@ -40,7 +40,7 @@
 					</folderInfo>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="include/yocs_cmd_vel_mux"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="include/ackermann_cmd_mux"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -48,7 +48,7 @@
 		</cconfiguration>
 	</storageModule>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-		<project id="cmd_vel_mux.null.53888827" name="cmd_vel_mux"/>
+		<project id="ackermann_cmd_mux.null.53888827" name="ackermann_cmd_mux"/>
 	</storageModule>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
@@ -61,7 +61,7 @@
 	</storageModule>
 	<storageModule moduleId="refreshScope" versionNumber="2">
 		<configuration configurationName="Default">
-			<resource resourceType="PROJECT" workspacePath="/yocs_cmd_vel_mux"/>
+			<resource resourceType="PROJECT" workspacePath="/ackermann_cmd_mux"/>
 		</configuration>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>

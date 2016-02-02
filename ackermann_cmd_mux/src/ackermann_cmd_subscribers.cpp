@@ -1,10 +1,10 @@
 /**
- * @file /src/cmd_vel_subscribers.cpp
+ * @file /src/ackermann_cmd_subscribers.cpp
  *
- * @brief  Subscriber handlers for the yocs_cmd_vel_mux
+ * @brief  Subscriber handlers for the ackermann_cmd_mux
  *
  * License: BSD
- *   https://raw.github.com/yujinrobot/yujin_ocs/hydro/yocs_cmd_vel_mux/LICENSE
+ *   https://raw.github.com/yujinrobot/yujin_ocs/hydro/yocs_ackermann_cmd_mux/LICENSE
  **/
 /*****************************************************************************
  ** Includes
@@ -12,20 +12,20 @@
 
 #include <fstream>
 
-#include "yocs_cmd_vel_mux/cmd_vel_subscribers.hpp"
-#include "yocs_cmd_vel_mux/exceptions.hpp"
+#include "ackermann_cmd_mux/ackermann_cmd_subscribers.hpp"
+#include "ackermann_cmd_mux/exceptions.hpp"
 
 /*****************************************************************************
 ** Namespaces
 *****************************************************************************/
 
-namespace yocs_cmd_vel_mux {
+namespace ackermann_cmd_mux {
 
 /*****************************************************************************
  ** Implementation
  *****************************************************************************/
 
-void CmdVelSubscribers::CmdVelSubs::operator << (const YAML::Node& node)
+void AckermannCmdSubscribers::AckermannCmdSubs::operator << (const YAML::Node& node)
 {
   node["name"]       >> name;
   node["topic"]      >> topic;
@@ -40,7 +40,7 @@ void CmdVelSubscribers::CmdVelSubs::operator << (const YAML::Node& node)
   }
 }
 
-void CmdVelSubscribers::configure(const YAML::Node& node) {
+void AckermannCmdSubscribers::configure(const YAML::Node& node) {
 
   list.clear();
   try
@@ -52,7 +52,7 @@ void CmdVelSubscribers::configure(const YAML::Node& node) {
     for (unsigned int i = 0; i < node.size(); i++)
     {
       // Parse every entries on YAML
-      CmdVelSubs subscriber(i);
+      AckermannCmdSubs subscriber(i);
       subscriber << node[i];
       list.push_back(subscriber);
     }
@@ -71,4 +71,4 @@ void CmdVelSubscribers::configure(const YAML::Node& node) {
 }
 
 
-} // namespace yocs_cmd_vel_mux
+} // namespace ackermann_cmd_mux

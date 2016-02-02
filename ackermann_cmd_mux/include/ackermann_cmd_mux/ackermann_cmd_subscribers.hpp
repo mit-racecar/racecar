@@ -1,24 +1,24 @@
 /**
- * @file /include/yocs_cmd_vel_mux/cmd_vel_subscribers.hpp
+ * @file /include/ackermann_cmd_mux/ackermann_cmd_subscribers.hpp
  *
- * @brief Structure for the cmd_vel_mux.
+ * @brief Structure for the ackermann_cmd_mux.
  *
  * License: BSD
- *   https://raw.github.com/yujinrobot/yujin_ocs/hydro/yocs_cmd_vel_mux/LICENSE
+ *   https://raw.github.com/yujinrobot/yujin_ocs/hydro/yocs_ackermann_cmd_mux/LICENSE
  **/
 /*****************************************************************************
 ** Ifdefs
 *****************************************************************************/
 
-#ifndef YUJIN_OCS_CMD_VEL_SUBSCRIBERS_HPP_
-#define YUJIN_OCS_CMD_VEL_SUBSCRIBERS_HPP_
+#ifndef RACECAR_ACKERMANN_CMD_SUBSCRIBERS_HPP_
+#define RACECAR_ACKERMANN_CMD_SUBSCRIBERS_HPP_
 
 /*****************************************************************************
 ** Includes
 *****************************************************************************/
 
 #include <ros/ros.h>
-#include <geometry_msgs/Twist.h>
+#include <ackermann_msgs/AckermannDriveStamped.h>
 #include <yaml-cpp/yaml.h>
 
 #ifdef HAVE_NEW_YAMLCPP
@@ -42,23 +42,23 @@ void operator >> (const YAML::Node& node, T& i)
 ** Namespaces
 *****************************************************************************/
 
-namespace yocs_cmd_vel_mux {
+namespace ackermann_cmd_mux {
 
 /*****************************************************************************
-** CmdVelSubscribers
+** AckermannCmdSubscribers
 *****************************************************************************/
 
 /**
- * Pool of cmd_vel topics subscribers
+ * Pool of ackermann_cmd topics subscribers
  */
-class CmdVelSubscribers
+class AckermannCmdSubscribers
 {
 public:
 
   /**
-   * Inner class describing an individual subscriber to a cmd_vel topic
+   * Inner class describing an individual subscriber to a ackermann_cmd topic
    */
-  class CmdVelSubs
+  class AckermannCmdSubs
   {
   public:
     unsigned int           idx;          /**< Index; assigned according to the order on YAML file */
@@ -71,16 +71,16 @@ public:
     std::string            short_desc;   /**< Short description (optional) */
     bool                   active;       /**< Whether this source is active */
 
-    CmdVelSubs(unsigned int idx) : idx(idx), active(false) {};
+    AckermannCmdSubs(unsigned int idx) : idx(idx), active(false) {};
 
     void operator << (const YAML::Node& node);
   };
 
-  CmdVelSubscribers() : allowed(VACANT) { }
-  ~CmdVelSubscribers() { }
+  AckermannCmdSubscribers() : allowed(VACANT) { }
+  ~AckermannCmdSubscribers() { }
 
-  std::vector<CmdVelSubs>::size_type size() { return list.size(); };
-  CmdVelSubs& operator [] (unsigned int idx) { return list[idx]; };
+  std::vector<AckermannCmdSubs>::size_type size() { return list.size(); };
+  AckermannCmdSubs& operator [] (unsigned int idx) { return list[idx]; };
 
   /**
    * @brief Configures the subscribers from a yaml file.
@@ -95,9 +95,9 @@ public:
   unsigned int allowed;
 
 private:
-  std::vector<CmdVelSubs> list;
+  std::vector<AckermannCmdSubs> list;
 };
 
-} // namespace yocs_cmd_vel_mux
+} // namespace ackermann_cmd_mux
 
-#endif /* CMD_VEL_SUBSCRIBERS_HPP_ */
+#endif /* ACKERMANN_CMD_SUBSCRIBERS_HPP_ */

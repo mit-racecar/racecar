@@ -1,12 +1,12 @@
 # Another example configuration file, though this one is used to test the dynamic reconfiguration
-# of the yocs_cmd_vel_mux. Used with reconfigure.launch.
+# of the ackermann_cmd_mux. Used with reconfigure.launch.
 
 subscribers:
   - name:        "Default input"
     topic:       "input/default"
     timeout:     0.1
     priority:    0
-    short_desc:  "The default cmd_vel, controllers unaware that we are multiplexing cmd_vel should come here"
+    short_desc:  "The default ackermann_cmd, controllers unaware that we are multiplexing ackermann_cmd should come here"
   - name:        "Navigation stack"
     topic:       "input/navigation"
     timeout:     0.5

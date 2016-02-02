@@ -1,17 +1,17 @@
 /**
- * @file /cmd_vel_mux/include/yocs_cmd_vel_mux/exceptions.hpp
+ * @file /ackermann_cmd_mux/include/ackermann_cmd_mux/exceptions.hpp
  *
- * @brief Exception classes for cmd_vel_mux.
+ * @brief Exception classes for ackermann_cmd_mux.
  *
  * License: BSD
- *   https://raw.github.com/yujinrobot/yujin_ocs/hydro/yocs_cmd_vel_mux/LICENSE
+ *   https://raw.github.com/yujinrobot/yujin_ocs/hydro/yocs_ackermann_cmd_mux/LICENSE
  **/
 /*****************************************************************************
 ** Ifdefs
 *****************************************************************************/
 
-#ifndef YUJIN_OCS_CMD_VEL_EXCEPTIONS_HPP_
-#define YUJIN_OCS_CMD_VEL_EXCEPTIONS_HPP_
+#ifndef RACECAR_ACKERMANN_CMD_EXCEPTIONS_HPP_
+#define RACECAR_ACKERMANN_CMD_EXCEPTIONS_HPP_
 
 /*****************************************************************************
 ** Includes
@@ -23,7 +23,7 @@
 ** Namespaces
 *****************************************************************************/
 
-namespace yocs_cmd_vel_mux {
+namespace ackermann_cmd_mux {
 
 /*****************************************************************************
 ** Exceptions
@@ -50,6 +50,6 @@ public:
         virtual ~YamlException() throw() {}
 };
 
-} // namespace yocs_cmd_vel_mux
+} // namespace ackermann_cmd_mux
 
-#endif /* YUJIN_OCS_CMD_VEL_EXCEPTIONS_HPP_ */
+#endif /* RACECAR_ACKERMANN_CMD_EXCEPTIONS_HPP_ */

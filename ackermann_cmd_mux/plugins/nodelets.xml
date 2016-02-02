@@ -1,0 +1,10 @@
+<library path="lib/libackermann_cmd_mux_nodelet">
+  <class name="ackermann_cmd_mux/AckermannCmdMuxNodelet"
+         type="ackermann_cmd_mux::AckermannCmdMuxNodelet"
+         base_class_type="nodelet::Nodelet">
+    <description>
+      Implementation for the ackermann command multiplexer as a nodelet.
+    </description>
+  </class>
+</library>
+
