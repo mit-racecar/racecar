@@ -90,9 +90,9 @@ catkin_package(
     rostopic
     rviz
     # specific to racecar-v1
-    pointgrey_camera_driver
-    px4flow
-    pwm_sysfs_driver
+    #pointgrey_camera_driver
+    #px4flow
+    #pwm_sysfs_driver
     # specific to racecar-v2
     # mapping
     gmapping
