@@ -25,11 +25,14 @@
   <run_depend>rosbag</run_depend>
   <run_depend>rostopic</run_depend>
   <run_depend>rviz</run_depend>
+
   <!-- specific to racecar-v1 -->
-  <run_depend>pointgrey_camera_driver</run_depend>
-  <run_depend>px4flow</run_depend>
-  <run_depend>pwm_sysfs_driver</run_depend>
+  <!-- <run_depend>pointgrey_camera_driver</run_depend> -->
+  <!-- <run_depend>px4flow</run_depend> -->
+  <!-- <run_depend>pwm_sysfs_driver</run_depend> -->
+
   <!-- specific to racecar-v2 -->
+
   <!-- mapping -->
   <run_depend>gmapping</run_depend>
   <run_depend>hector_mapping</run_depend>
