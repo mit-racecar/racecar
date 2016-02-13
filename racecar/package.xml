@@ -4,8 +4,9 @@
   <version>0.0.1</version>
   <description>RACECAR launch scripts</description>
 
+  <author>Michael Boulet</author>
   <maintainer email="boulet@ll.mit.edu">Michael Boulet</maintainer>
-  <license>MIT</license>
+  <license>BSD</license>
 
   <!-- <url type="website">http://wiki.ros.org/pwm_sysfs_driver</url> -->
 

@@ -1,11 +1,4 @@
 <!-- -*- mode: XML -*- -->
-<!--
- This work is sponsored by the Department of the Air Force under Air Force
- Contract FA8721-05-C-0002. Opinions, interpretations, conclusions, and
- recommendations are those of the author and are not necessarily endorsed by
- the United States Government.
--->
-
 <launch>
 
   <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_to_imu" 
