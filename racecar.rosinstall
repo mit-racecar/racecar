@@ -1,4 +1,3 @@
 - setup-file: {local-name: /opt/ros/indigo/setup.sh}
 - git: {local-name: src/racecar,         version: master,        uri: 'https://github.com/mit-racecar/racecar.git'}
 - git: {local-name: src/vesc,            version: master,        uri: 'https://github.com/mit-racecar/vesc.git'}
-- git: {local-name: src/racecar-simulator,            version: master,        uri: 'https://github.com/mit-racecar/racecar-simulator.git'}
