@@ -18,11 +18,12 @@ vesc_driver:
   duty_cycle_min: 0.0
   duty_cycle_max: 0.0
   current_min: 0.0
-  current_max: 0.0
-  brake_min: 0.0
-  brake_max: 0.0
-  speed_min: -4000
-  speed_max: 6000
+  current_max: 20.0
+  brake_min: -20000.0
+  brake_max: 200000.0
+  speed_min: -3250
+  speed_max: 3250
+  max_delta_rpm: 200 # For the trapezoidal controller
   position_min: 0.0
   position_max: 0.0
   servo_min: 0.15

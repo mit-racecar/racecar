@@ -2,7 +2,7 @@
 <launch>
   <arg name="racecar_version" default="racecar-v2" />
   <arg name="run_camera" default="false"/>
-
+  <param name="robot_description" command="$(find xacro)/xacro '$(find racecar_description)/urdf/racecar.xacro'" />
   <include file="$(find racecar)/launch/includes/$(arg racecar_version)-teleop.launch.xml">
     <arg name="racecar_version" value="$(arg racecar_version)" />
     <arg name="run_camera" value="$(arg run_camera)" />

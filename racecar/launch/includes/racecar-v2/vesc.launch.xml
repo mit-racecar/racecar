@@ -7,8 +7,10 @@
 
   <node pkg="vesc_ackermann" type="ackermann_to_vesc_node" name="ackermann_to_vesc">
     <remap from="ackermann_cmd" to="ackermann_cmd_mux/output" />
+    <remap from="commands/motor/speed" to="commands/motor/unsmoothed_speed" />
   </node>
   <node pkg="vesc_driver" type="vesc_driver_node" name="vesc_driver" />
   <node pkg="vesc_ackermann" type="vesc_to_odom_node" name="vesc_to_odom" />
+<node name="throttle_interpolator" pkg="ackermann_cmd_mux" type="throttle_interpolator.py" />
 
 </launch>
