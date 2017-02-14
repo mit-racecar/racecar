@@ -1,4 +1,4 @@
-- setup-file: {local-name: /opt/ros/indigo/setup.sh}
+- setup-file: {local-name: /opt/ros/kinetic/setup.sh}
 - git: {local-name: src/racecar,         version: master,        uri: 'https://github.com/mit-racecar/racecar.git'}
 - git: {local-name: src/vesc,            version: master,        uri: 'https://github.com/mit-racecar/vesc.git'}
 - git: {local-name: src/zed_wrapper,     version: master,        uri: 'https://github.com/stereolabs/zed-ros-wrapper.git'}
