@@ -13,19 +13,19 @@ subscribers:
     short_desc:  "Input for autonomous navigation, highest priority"
 
   - name:        "Nav_1"
-    topic:       "input/nav_0"
+    topic:       "input/nav_1"
     timeout:     0.2
     priority:    15
     short_desc:  "Input for autonomous navigation"
 
   - name:        "Nav_2"
-    topic:       "input/nav_0"
+    topic:       "input/nav_2"
     timeout:     0.2
     priority:    10
     short_desc:  "Input for autonomous navigation"
 
   - name:        "Nav_3"
-    topic:       "input/nav_0"
+    topic:       "input/nav_3"
     timeout:     0.2
     priority:    5
     short_desc:  "Input for autonomous navigation"
