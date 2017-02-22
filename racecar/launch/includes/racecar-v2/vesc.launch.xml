@@ -6,11 +6,14 @@
   <rosparam file="$(arg vesc_config)" command="load" />
 
   <node pkg="vesc_ackermann" type="ackermann_to_vesc_node" name="ackermann_to_vesc">
-    <remap from="ackermann_cmd" to="ackermann_cmd_mux/output" />
+    <!-- Remap to make mux control work with the VESC -->
+    <remap from="ackermann_cmd" to="low_level/ackermann_cmd_mux/output" />
+    <!-- Remap to make vesc have trapezoidal control on the throttle to avoid skipping -->
     <remap from="commands/motor/speed" to="commands/motor/unsmoothed_speed" />
   </node>
+
   <node pkg="vesc_driver" type="vesc_driver_node" name="vesc_driver" />
   <node pkg="vesc_ackermann" type="vesc_to_odom_node" name="vesc_to_odom" />
-<node name="throttle_interpolator" pkg="ackermann_cmd_mux" type="throttle_interpolator.py" />
+  <node name="throttle_interpolator" pkg="ackermann_cmd_mux" type="throttle_interpolator.py" />
 
 </launch>
