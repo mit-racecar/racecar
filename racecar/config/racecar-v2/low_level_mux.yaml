@@ -1,0 +1,27 @@
+# Individual subscriber configuration:
+#   name:           Source name
+#   topic:          The topic that provides ackermann_cmd messages
+#   timeout:        Time in seconds without incoming messages to consider this topic inactive
+#   priority:       Priority: an UNIQUE unsigned integer from 0 (lowest) to MAX_INT 
+#   short_desc:     Short description (optional)
+
+subscribers:
+  - name:        "Teleoperation"
+    topic:       "input/teleop"
+    timeout:     0.2
+    priority:    10
+    short_desc:  "Input for human teleoperation (joystick). Highest priority."
+    
+  - name:        "Safety"
+    topic:       "input/safety"
+    timeout:     0.2
+    priority:    5
+    short_desc:  "Input for safety monitor."
+
+  - name:        "Navigation"
+    topic:       "input/navigation"
+    timeout:     0.2
+    priority:    0
+    short_desc:  "Input for autonomous navigation"
+    
+publisher:       "output"

@@ -1,0 +1,33 @@
+<!-- -*- mode: XML -*- -->
+<!--
+ This work is sponsored by the Department of the Air Force under Air Force
+ Contract FA8721-05-C-0002. Opinions, interpretations, conclusions, and
+ recommendations are those of the author and are not necessarily endorsed by
+ the United States Government.
+-->
+
+<launch>
+
+  <arg name="racecar_version" default="racecar-v2" />
+
+  <!-- Chain the MUXs -->
+  <node name="mux_chainer" pkg="topic_tools" type="relay"
+  	args="/vesc/high_level/ackermann_cmd_mux/output /vesc/low_level/ackermann_cmd_mux/input/navigation" />
+
+  
+  <!-- default (zero) ackermann command for high level MUX -->
+  <node name="zero_ackermann_cmd" pkg="rostopic" type="rostopic" args="pub -r 6 high_level/ackermann_cmd_mux/input/default ackermann_msgs/AckermannDriveStamped '{header: auto, drive: {steering_angle: 0.0, speed: 0.0} }'" />
+  
+  <!-- High level MUX -->
+  <include file="$(find ackermann_cmd_mux)/launch/standalone.launch" ns="high_level">
+    <arg name="nodelet_manager_name" value="ackermann_cmd_mux_nodelet_manager" />
+    <arg name="config_file" value="$(find racecar)/config/$(arg racecar_version)/high_level_mux.yaml" />
+  </include>
+
+  <!-- Low level MUX -->
+  <include file="$(find ackermann_cmd_mux)/launch/standalone.launch" ns="low_level">
+    <arg name="nodelet_manager_name" value="ackermann_cmd_mux_nodelet_manager" />
+    <arg name="config_file" value="$(find racecar)/config/$(arg racecar_version)/low_level_mux.yaml" />
+  </include>
+
+</launch>
