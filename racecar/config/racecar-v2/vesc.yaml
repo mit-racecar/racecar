@@ -3,6 +3,15 @@
 speed_to_erpm_gain: 4614
 speed_to_erpm_offset: 0.0
 
+tachometer_ticks_to_meters_gain: 0.00225
+# servo smoother - limits rotation speed and smooths anything above limit
+max_servo_speed: 3.2 # radians/second
+servo_smoother_rate: 75.0 # messages/sec
+
+# servo smoother - limits acceleration and smooths anything above limit
+max_acceleration: 2.5 # meters/second^2
+throttle_smoother_rate: 75.0 # messages/sec
+
 # servo value (0 to 1) =  steering_angle_to_servo_gain * steering angle (radians) + steering_angle_to_servo_offset
 steering_angle_to_servo_gain: -1.2135
 steering_angle_to_servo_offset: 0.5304
@@ -23,7 +32,6 @@ vesc_driver:
   brake_max: 200000.0
   speed_min: -3250
   speed_max: 3250
-  max_delta_rpm: 200 # For the trapezoidal controller
   position_min: 0.0
   position_max: 0.0
   servo_min: 0.15

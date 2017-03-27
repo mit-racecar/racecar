@@ -10,6 +10,8 @@
     <remap from="ackermann_cmd" to="low_level/ackermann_cmd_mux/output" />
     <!-- Remap to make vesc have trapezoidal control on the throttle to avoid skipping -->
     <remap from="commands/motor/speed" to="commands/motor/unsmoothed_speed" />
+    <!-- Remap to make vesc have trapezoidal control on the servo to avoid incorrect odometry and damange -->
+    <remap from="commands/servo/position" to="commands/servo/unsmoothed_position" />
   </node>
 
   <node pkg="vesc_driver" type="vesc_driver_node" name="vesc_driver" />
