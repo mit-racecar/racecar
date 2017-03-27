@@ -17,7 +17,7 @@ steering_angle_to_servo_gain: -1.2135
 steering_angle_to_servo_offset: 0.5304
 
 # publish odom to base link tf
-vesc_to_odom/publish_tf: true
+vesc_to_odom/publish_tf: false
 
 # car wheelbase is about 25cm 
 wheelbase: .25
