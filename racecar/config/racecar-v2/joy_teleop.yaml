@@ -4,11 +4,13 @@ joy_node:
   coalesce_interval: 0.01
 
 teleop:
+  # Manual control is the default mode.
+  # Holding any button enables autonomous control.
   ackermann:
     type: topic
     message_type: ackermann_msgs/AckermannDriveStamped
     topic_name: low_level/ackermann_cmd_mux/input/teleop
-    deadman_buttons: [4]
+    deadman_buttons: []
     axis_mappings:
       -
         axis: 1
