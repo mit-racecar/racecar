@@ -21,7 +21,6 @@
   <run_depend>tf2_ros</run_depend>
   <run_depend>urg_node</run_depend>
   <run_depend>joy</run_depend>
-  <run_depend>joy_teleop</run_depend>
   <run_depend>rosbag</run_depend>
   <run_depend>rostopic</run_depend>
   <run_depend>rviz</run_depend>

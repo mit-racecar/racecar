@@ -8,6 +8,6 @@
 
   <node pkg="joy" type="joy_node" name="joy_node" />
 
-  <node pkg="joy_teleop" type="joy_teleop.py" name="joy_teleop" />
+  <node pkg="racecar" type="joy_teleop.py" name="joy_teleop" />
 
 </launch>

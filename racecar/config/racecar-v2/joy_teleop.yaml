@@ -4,13 +4,26 @@ joy_node:
   coalesce_interval: 0.01
 
 teleop:
-  # Manual control is the default mode.
-  # Holding any button enables autonomous control.
-  ackermann:
+  # Default mode - Stop for safety
+  default:
+    type: topic
+    is_default: true
+    message_type: ackermann_msgs/AckermannDriveStamped
+    topic_name: low_level/ackermann_cmd_mux/input/teleop
+    message_value:
+      -
+        target: drive.speed
+        value: 0.0
+      -
+        target: drive.steering_angle
+        value: 0.0
+
+  # Enable Human control by holding Left Bumper
+  human_control:
     type: topic
     message_type: ackermann_msgs/AckermannDriveStamped
     topic_name: low_level/ackermann_cmd_mux/input/teleop
-    deadman_buttons: []
+    deadman_buttons: [4]
     axis_mappings:
       -
         axis: 1
@@ -22,3 +35,16 @@ teleop:
         target: drive.steering_angle
         scale: 0.34                  # joystick will command plus or minus ~20 degrees steering angle
         offset: 0.0
+
+  # Enable autonomous control by pressing right bumper
+  # This switch causes the joy_teleop to stop sending messages to input/teleop
+  # And send messages to /dev/null (an unused ROS topic)
+  autonomous_control:
+    type: topic
+    message_type: std_msgs/Int8
+    topic_name: /dev/null
+    deadman_buttons: [5]
+    message_value:
+      -
+        target: data
+        value: 0
