@@ -1,6 +1,6 @@
 <!--
   Example standalone launcher for the ackermann command multiplexer.
-  
+
   For best results you would usually load this into the core control system
   to avoid latency for reactive controllers. However for other apps, running
   it standalone with a similar configuration will also work.
@@ -8,10 +8,10 @@
 <launch>
   <arg name="nodelet_manager_name"  default="nodelet_manager"/>
   <arg name="config_file"           default="$(find ackermann_cmd_mux)/param/example.yaml"/>
-  
+
   <!-- nodelet manager -->
   <node pkg="nodelet" type="nodelet" name="$(arg nodelet_manager_name)" args="manager"/>
-  
+
   <!-- ackermann command mulitplexer -->
   <include file="$(find ackermann_cmd_mux)/launch/ackermann_cmd_mux.launch">
     <arg name="nodelet_manager_name"  value="$(arg nodelet_manager_name)"/>
