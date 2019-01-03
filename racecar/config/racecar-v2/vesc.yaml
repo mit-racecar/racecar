@@ -1,5 +1,6 @@
 
 # erpm (electrical rpm) = speed_to_erpm_gain * speed (meters / second) + speed_to_erpm_offset
+# for offset=0. speed_to_erpm_gain = num_motor_poles*60/circumference_wheel_in_meters
 speed_to_erpm_gain: 4614
 speed_to_erpm_offset: 0.0
 
