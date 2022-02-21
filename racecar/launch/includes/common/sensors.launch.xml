@@ -7,9 +7,27 @@
   <rosparam file="$(arg sensors_config)" command="load" />
 
   <!-- laser -->
-  <node pkg="urg_node" type="urg_node" name="laser_node" />
+  <!-- <node pkg="urg_node" type="urg_node" name="laser_node" /> -->
+
+    <!-- export SCANNER_TYPE=hokuyo -->
+  <group if="$(eval env('SCANNER_TYPE') == 'hokuyo')">
+    <!-- Hokoyu laser -->
+    <node pkg="urg_node" type="urg_node" name="laser_node" />
+  </group>
+
+  <!-- export SCANNER_TYPE=velodyne -->
+  <group if="$(eval env('SCANNER_TYPE') == 'velodyne')">
+    <!-- Velodyne 3D laser -->
+    <include file="$(find racecar)/launch/includes/racecar-v2/velodyne.launch.xml">
+      <arg name="rpm" value="1200"/>
+      <arg name="max_range" value="30.0" />
+
+      <!-- this determines which ring to use for the 2D lidar -->
+      <arg name="laserscan_ring" value="8" />
+    </include>
+  </group>
 
   <!-- imu -->
-  <node pkg="razor_imu_9dof" type="imu_node.py" name="imu_node" />
+  <include file="$(find razor_imu_m0_driver)/launch/driver_node.launch"></include>
 
 </launch>

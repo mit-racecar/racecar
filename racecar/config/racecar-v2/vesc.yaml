@@ -10,7 +10,7 @@ max_servo_speed: 3.2 # radians/second
 servo_smoother_rate: 75.0 # messages/sec
 
 # servo smoother - limits acceleration and smooths anything above limit
-max_acceleration: 2.5 # meters/second^2
+max_acceleration: 3.5 # meters/second^2
 throttle_smoother_rate: 75.0 # messages/sec
 
 # servo value (0 to 1) =  steering_angle_to_servo_gain * steering angle (radians) + steering_angle_to_servo_offset
@@ -24,7 +24,7 @@ vesc_to_odom/publish_tf: false
 wheelbase: .25
 
 vesc_driver:
-  port: /dev/ttyACM0
+  port: /dev/ttyVESC
   duty_cycle_min: 0.0
   duty_cycle_max: 0.0
   current_min: 0.0
@@ -32,7 +32,7 @@ vesc_driver:
   brake_min: -20000.0
   brake_max: 200000.0
   speed_min: -3250
-  speed_max: 3250
+  speed_max: 10000
   position_min: 0.0
   position_max: 0.0
   servo_min: 0.15
