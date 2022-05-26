@@ -9,7 +9,7 @@
 #   name:           Source name
 #   topic:          The topic that provides ackermann_cmd messages
 #   timeout:        Time in seconds without incoming messages to consider this topic inactive
-#   priority:       Priority: an UNIQUE unsigned integer from 0 (lowest) to MAX_INT 
+#   priority:       Priority: an UNIQUE unsigned integer from 0 (lowest) to MAX_INT
 #   short_desc:     Short description (optional)
 
 subscribers:
